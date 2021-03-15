@@ -24,16 +24,11 @@ class FirstScreen extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            InkWell(
-              onTap: () {
+            MyCircleWidget(
+              text: 'Start',
+              onPress: () {
                 Navigator.pushReplacementNamed(context, QuizPage.route);
               },
-              child: MyCircleWidget(
-                text: 'Start',
-                onPress: () {
-                  Navigator.pushReplacementNamed(context, QuizPage.route);
-                },
-              ),
             ),
             SizedBox(
               height: 200,
@@ -45,7 +40,7 @@ class FirstScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(width: 1, color: Colors.white)),
               child: Text(
-                '(Score Rules) \n \nCorrect Answers +1 \nWrong Answers -1 ',
+                '(Rules) \n \nCorrect Answers +1 \nWrong Answers -1 ',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
               ),
