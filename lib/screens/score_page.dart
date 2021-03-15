@@ -6,6 +6,7 @@ import 'package:test_app_ani/widgets/my_circle_widget.dart';
 class ScorePage extends StatelessWidget {
   static const route = 'ScorePage';
   final score = 0;
+
   @override
   Widget build(BuildContext context) {
     var argScore = ModalRoute.of(context).settings.arguments;
@@ -13,10 +14,20 @@ class ScorePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyCircleWidget(text: '$argScore'),
-            Buttons(
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Your Score',
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            ButtonsWidget(
               text: 'Restart',
               onPress: () {
                 argScore = score;
