@@ -9,15 +9,15 @@ class Buttons extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return InkWell(
+      onTap: onPress,
+      child: Container(
       width: 150,
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30), color: Colors.blue),
-      child: InkWell(
-        onTap: onPress,
-        child: Text(
+      child:  Text(
           '$text',
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
