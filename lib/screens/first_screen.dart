@@ -8,8 +8,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child:
-                 MyCircleWidget(
+            child:MyCircleWidget(
                   text: 'Start',
                   onPress: () {
                     Navigator.pushReplacementNamed(context, QuizPage.route);
