@@ -52,6 +52,7 @@ class _QuizPageState extends State<QuizPage>
   void buttonFunction(bool trueOrFalse) {
     setState(() {
       if (index >= questionsAns.length) {
+        score += 1;
        Navigator.pushReplacementNamed(context, ScorePage.route,
             arguments: score);
       } else if (questionsAns[index]['ans'] == trueOrFalse) {
