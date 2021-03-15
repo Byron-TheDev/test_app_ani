@@ -31,7 +31,7 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 200,
+              height: MediaQuery.of(context).size.height * .12,
             ),
             Container(
               margin: EdgeInsets.only(top: 20, bottom: 30),

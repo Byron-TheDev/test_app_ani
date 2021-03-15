@@ -52,7 +52,7 @@ class _QuizPageState extends State<QuizPage>
   void buttonFunction(bool trueOrFalse) {
     setState(() {
       if (index >= questionsAns.length - 1) {
-        score += 1;
+        questionsAns[index]['ans'] != trueOrFalse ? score = score : score += 1;
         controller.stop();
         Navigator.pushReplacementNamed(context, ScorePage.route,
             arguments: score);
