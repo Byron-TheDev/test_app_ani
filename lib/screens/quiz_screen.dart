@@ -63,6 +63,7 @@ class _QuizPageState extends State<QuizPage>
         score += 1;
       } else if (questionsAns[index]['ans'] != trueOrFalse) {
         score <= 0 ? score = 0 : score -= 1;
+
         Navigator.pushReplacementNamed(context, ScorePage.route,
             arguments: score);
       }
