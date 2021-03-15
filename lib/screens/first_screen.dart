@@ -8,15 +8,12 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: InkWell(
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, QuizPage.route);
-                },
-                child: MyCircleWidget(
+            child:
+                 MyCircleWidget(
                   text: 'Start',
                   onPress: () {
                     Navigator.pushReplacementNamed(context, QuizPage.route);
                   },
-                ))));
+                ),),);
   }
 }
