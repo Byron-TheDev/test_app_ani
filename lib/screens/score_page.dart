@@ -16,6 +16,16 @@ class ScorePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MyCircleWidget(text: '$argScore'),
+             SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Your Score',
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 100,
+            ),
             Buttons(
               text: 'Restart',
               onPress: () {
