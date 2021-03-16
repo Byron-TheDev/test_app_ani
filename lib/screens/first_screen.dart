@@ -6,6 +6,7 @@ class FirstScreen extends StatelessWidget {
   static const route = 'First';
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
         child: Column(
@@ -22,7 +23,7 @@ class FirstScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: size.height * .03,
             ),
             MyCircleWidget(
               text: 'Start',
@@ -31,14 +32,16 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * .12,
+              height: size.height * .12,
             ),
             Container(
-              margin: EdgeInsets.only(top: 20, bottom: 30),
-              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.only(
+                  top: size.height * .02, bottom: size.height * .03),
+              padding: EdgeInsets.all(size.height * .031),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 1, color: Colors.white)),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(
+                      width: size.width * .001, color: Colors.white)),
               child: Text(
                 '(Rules) \n \nCorrect Answers +1 \nWrong Answers -1 ',
                 textAlign: TextAlign.center,

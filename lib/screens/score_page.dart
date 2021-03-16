@@ -9,6 +9,7 @@ class ScorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     var argScore = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
@@ -18,14 +19,14 @@ class ScorePage extends StatelessWidget {
           children: [
             MyCircleWidget(text: '$argScore'),
             SizedBox(
-              height: 10,
+              height: size.height * .015,
             ),
             Text(
               'Your Score',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: 100,
+              height: size.height * .15,
             ),
             ButtonsWidget(
               text: 'Restart',

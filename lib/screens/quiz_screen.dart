@@ -52,14 +52,8 @@ class _QuizPageState extends State<QuizPage>
   void buttonFunction(bool trueOrFalse) {
     setState(() {
       if (index >= questionsAns.length - 1) {
-        if (questionsAns[index]['ans'] != trueOrFalse) {
-          score -= 1;
-          score <= 0 ? score = 0 : score -= 1;
-
-          Navigator.pushReplacementNamed(context, ScorePage.route,
-              arguments: score);
-        }
-        score += 1;
+        questionsAns[index]['ans'] != trueOrFalse ? score -= 1 : score += 1;
+        controller.stop();
         Navigator.pushReplacementNamed(context, ScorePage.route,
             arguments: score);
       } else if (questionsAns[index]['ans'] == trueOrFalse) {
@@ -67,6 +61,10 @@ class _QuizPageState extends State<QuizPage>
         controller.reset();
         controller.forward();
         score += 1;
+      } else if (questionsAns[index]['ans'] != trueOrFalse) {
+        score <= 0 ? score = 0 : score -= 1;
+        Navigator.pushReplacementNamed(context, ScorePage.route,
+            arguments: score);
       }
     });
   }
@@ -79,7 +77,7 @@ class _QuizPageState extends State<QuizPage>
         children: [
           Container(
             height: size.height,
-            margin: EdgeInsets.only(top: 50),
+            margin: EdgeInsets.only(top: size.height * .05),
           ),
           Positioned(
             left: 0,
@@ -111,7 +109,7 @@ class _QuizPageState extends State<QuizPage>
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * .02,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
